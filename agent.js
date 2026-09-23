@@ -34,9 +34,10 @@ function runTask({ projectId, prompt }) {
   if (current) return send("error", { message: "Codex 正在执行另一个任务" });
 
   send("status", { state: "working", message: "Codex 已开始工作" });
-  current = spawn("codex", ["exec", "--json", "--color", "never", "--ask-for-approval", "never", "--sandbox", "workspace-write", "-C", project.path, prompt], {
+  current = spawn("codex", ["--ask-for-approval", "never", "exec", "--json", "--color", "never", "--sandbox", "workspace-write", "-C", project.path, prompt], {
     env: process.env
   });
+  current.stdin.end();
 
   let pending = "";
   current.stdout.on("data", (chunk) => {
