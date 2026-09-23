@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: codex-pocket
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: POCKET_TOKEN
+        generateValue: true

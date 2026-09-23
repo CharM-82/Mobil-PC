@@ -1,0 +1,16 @@
+{
+  "name": "codex-pocket",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "agent": "node agent.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

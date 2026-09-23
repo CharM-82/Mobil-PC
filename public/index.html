@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Codex Pocket</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main>
+    <header><div><span class="eyebrow">CODEX POCKET</span><h1>电脑上的 Codex，<br>现在装进口袋。</h1></div><span id="presence" class="pill offline">● 离线</span></header>
+    <section class="panel">
+      <label for="project">当前项目</label>
+      <select id="project"><option>正在连接…</option></select>
+      <div id="timeline" class="timeline"><p class="muted">连接电脑后，这里会显示工作进度。</p></div>
+      <form id="form">
+        <textarea id="prompt" placeholder="告诉 Codex 要完成什么…" required></textarea>
+        <button>发送任务 <span>↑</span></button>
+      </form>
+    </section>
+    <section id="approval" class="approval hidden"><span class="eyebrow">需要你的批准</span><h2 id="approval-title"></h2><pre id="approval-command"></pre><div><button data-answer="reject" class="ghost">拒绝</button><button data-answer="approve">允许</button></div></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
